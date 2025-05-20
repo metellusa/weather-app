@@ -1,0 +1,13 @@
+# src/main/resources/application.yml
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: weather-app
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web.reactive.function.client: DEBUG

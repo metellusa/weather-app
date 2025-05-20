@@ -1,0 +1,37 @@
+# === Java build artifacts ===
+/target/
+*.class
+*.jar
+*.war
+
+# === IDEs ===
+*.iml
+.idea/
+*.ipr
+*.iws
+*.log
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Test output ===
+/surefire-reports/
+/test-output/
+
+# === Maven wrapper files (optional if not using) ===
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# === Application secrets (none needed for this app) ===
+*.env
+*.key
+*.pem
+
+# === Logs and caches ===
+/logs/
+/.cache/
+
+# === Temporary files ===
+*.swp
+*.tmp
