@@ -14,11 +14,12 @@ import static org.mockito.Mockito.*;
 
 public class WeatherServiceTest {
 
+    @SuppressWarnings("unchecked")
     @Test
     void testGetTodayForecastTransformsCorrectly() {
         // Setup mock WebClient
         ForecastResponse.Period mockPeriod = new ForecastResponse.Period();
-        mockPeriod.setName("Monday");
+        mockPeriod.setStartTime("2025-05-21T13:00:00-04:00");
         mockPeriod.setTemperature(81);
         mockPeriod.setTemperatureUnit("F");
         mockPeriod.setShortForecast("Partly Sunny");
@@ -30,7 +31,9 @@ public class WeatherServiceTest {
         forecast.setProperties(props);
 
         WebClient webClient = mock(WebClient.class);
+        @SuppressWarnings("rawtypes")
         WebClient.RequestHeadersUriSpec request = mock(WebClient.RequestHeadersUriSpec.class);
+        @SuppressWarnings("rawtypes")
         WebClient.RequestHeadersSpec headersSpec = mock(WebClient.RequestHeadersSpec.class);
         WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
 
@@ -45,7 +48,7 @@ public class WeatherServiceTest {
 
         StepVerifier.create(result)
                 .expectNextMatches(df -> 
-                        df.getDay_name().equals("Monday") &&
+                        df.getDay_name().equals("Wednesday") &&
                         Math.abs(df.getTemp_high_celsius() - 27.2) < 0.1 &&
                         df.getForecast_blurp().equals("Partly Sunny")
                 )

@@ -14,7 +14,7 @@ public class ForecastResponse {
 
     @Data
     public static class Period {
-        private String name;
+        private String startTime;
         private int temperature;
         private String temperatureUnit;
         private String shortForecast;
