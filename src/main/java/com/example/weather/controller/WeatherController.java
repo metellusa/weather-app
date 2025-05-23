@@ -22,7 +22,6 @@ public class WeatherController {
     /**
      * Exposes a simplified endpoint that returns the current day's weather forecast.
      * - Response structure matches the required format: { "daily": [ ... ] }
-     * - Internally calls WeatherService to fetch and transform the external NOAA data
      *
      * Example response:
      * {
